@@ -988,7 +988,7 @@ def make_results_file(final_result, evaluationfolder, DLCscorer):
         df = pd.concat((df, temp)).reset_index(drop=True)
 
     df.to_csv(output_path)
-    # df.to_hdf(output_path.replace('csv', 'h5'), 'df_with_missing', format='table', mode='w')
+    df.to_hdf(output_path.replace('csv', 'h5'), 'df_with_missing', format='table', mode='w')
 
 
 if __name__ == "__main__":

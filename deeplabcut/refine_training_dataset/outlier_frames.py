@@ -179,6 +179,7 @@ def extract_outlier_frames(
             Indices = []
             if outlieralgorithm == "uncertain":
                 p = df_temp.xs("likelihood", level=-1, axis=1)
+                print('p_bound is = ',p_bound)
                 ind = df_temp.index[(p < p_bound).any(axis=1)].tolist()
                 Indices.extend(ind)
             elif outlieralgorithm == "jump":
